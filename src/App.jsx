@@ -1,7 +1,17 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavbarEl from "./NavbarEl";
+import Main from "./Main";
+import FindUs from "./FindUs";
+
 const App = () => {
   return (
-    <h1>Hello from React</h1>
-  );
-};
+    <div>
+      <NavbarEl />
+      <Main />
+      <FindUs />
+    </div>
+)
+}
+
 
 export default App;
