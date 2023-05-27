@@ -1,6 +1,5 @@
 import { Container, Nav, Navbar, NavDropdown, Offcanvas } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import treats_for_pets_logo from "./images/logos/treats_for_pets_logo.jpeg"
 
 const NavbarEl = () => {
   const expand = "lg";
@@ -12,9 +11,9 @@ const NavbarEl = () => {
             <div className="d-flex">
             <img
               alt=""
-              src={treats_for_pets_logo}
-              width="30"
-              height="30"
+              src={"images/logos/treats_for_pets_logo.jpeg"}
+              width="50"
+              height="50"
               className="d-inline-block"
             />
             <h3>Treats for Pets</h3>
