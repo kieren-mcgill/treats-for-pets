@@ -4,10 +4,10 @@ import Main from "./Main";
 import FindUs from "./FindUs";
 
 
-const App = () => {
+const App = ({ getShopItems }) => {
   return (
     <div>
-      <NavbarEl />
+      <NavbarEl getShopItems={getShopItems} />
       <Main />
       <FindUs />
     </div>

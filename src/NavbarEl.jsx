@@ -1,7 +1,7 @@
 import { Container, Nav, Navbar, NavDropdown, Offcanvas } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const NavbarEl = () => {
+const NavbarEl = ( { getShopItems }) => {
   const expand = "lg";
   return (
     <>
@@ -32,7 +32,7 @@ const NavbarEl = () => {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link as={Link} to="/pet-shop">Treats for Pets</Nav.Link>
+                <Nav.Link onClick={getShopItems} as={Link} to="/pet-shop">Treats for Pets</Nav.Link>
                 <Nav.Link as={Link} to="/charity">Pets in Need</Nav.Link>
                 <Nav.Link href="#findUs">Find us</Nav.Link>
                 {/*<NavDropdown*/}
