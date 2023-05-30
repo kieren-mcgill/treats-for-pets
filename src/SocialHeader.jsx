@@ -1,6 +1,6 @@
 
 const SocialHeader =({shopItems})=> {
-  const textToDisplay = shopItems.length === 0 ? "Loading..." : shopItems[1].attributes.title;
+  const textToDisplay = shopItems.length === 0 ? "Loading..." : shopItems[0].attributes.title;
 
   return(
     <>

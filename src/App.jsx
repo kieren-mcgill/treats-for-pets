@@ -8,26 +8,22 @@ import axios from "axios";
   const App = () => {
     const [error, setError] = useState([]);
     const [shopItems, setShopItems] = useState([]);
+    const [charityImages, setCharityImages] = useState([]);
+    const [shopImages, setShopImages] = useState([]);
+
+    const strapiDataToGet = [
+      {url: "/shop-items", response: setShopItems},
+      {url: "/charity-carousel-images", response: setShopItems},
+      {url: "/shop-carousel-images", response: setShopItems}
+    ]
 
     useEffect(() => {
+      strapiDataToGet.map((collection)=>
       axios
-        .get("http://localhost:1337/api/shop-items")
+        .get(`http://localhost:1337/api${collection.url}`)
         .then(({ data }) => setShopItems(data.data))
-        .catch((error) => setError(error));
+        .catch((error) => setError(error)))
     }, []);
-
-    useEffect(() => {
-      axios
-        .get("http://localhost:1337/api/shop-items")
-        .then(({ data }) => setShopItems(data.data))
-        .catch((error) => setError(error));
-    }, []);
-
-
-
-    if (error) {
-      return <div>An error occurred: {error.message}</div>;
-    }
 
   return (
     <div>
