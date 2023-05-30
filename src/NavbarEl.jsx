@@ -27,12 +27,12 @@ const NavbarEl = ( { getShopItems }) => {
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                Offcanvas
+                Treats for Pets
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link onClick={getShopItems} as={Link} to="/pet-shop">Treats for Pets</Nav.Link>
+                <Nav.Link as={Link} to="/our-shop">Our shop</Nav.Link>
                 <Nav.Link as={Link} to="/charity">Pets in Need</Nav.Link>
                 <Nav.Link href="#findUs">Find us</Nav.Link>
                 {/*<NavDropdown*/}
