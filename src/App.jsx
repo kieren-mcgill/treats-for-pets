@@ -4,12 +4,15 @@ import Main from "./Main";
 import FindUs from "./FindUs";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { initialTextContent } from "./initialContent"
+
 
   const App = () => {
     const [error, setError] = useState([]);
     const [shopItems, setShopItems] = useState([]);
     const [charityImages, setCharityImages] = useState([]);
     const [shopImages, setShopImages] = useState([]);
+    const [textContent, setTextContent] = useState(initialTextContent)
 
     const strapiDataToGet = [
       {url: "/shop-items", response: setShopItems},
@@ -28,11 +31,10 @@ import axios from "axios";
   return (
     <div>
       <NavbarEl />
-      <Main shopItems={shopItems}/>
+      <Main textContent={textContent}/>
       <FindUs />
     </div>
 )
 }
-
 
 export default App;

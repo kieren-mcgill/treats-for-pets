@@ -1,10 +1,16 @@
+import { Facebook, Instagram } from "react-bootstrap-icons";
 
-const SocialHeader =({shopItems})=> {
-  const textToDisplay = shopItems.length === 0 ? "Loading..." : shopItems[0].attributes.title;
+const SocialHeader = () => {
 
-  return(
+  return (
     <>
-      <p>{textToDisplay}</p>
+      <div className="social d-flex justify-content-center align-items-center">
+        <div>
+          <Facebook size='40' className="mt-2 mb-2 me-4 green"/>
+          <Instagram size='40' className="mt-2 mb-2 ms-4 green"/>
+        </div>
+      </div>
+
     </>
   )
 }

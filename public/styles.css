@@ -1,0 +1,57 @@
+
+.nav-style {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.2);
+    background-color: rgb(248, 246, 231);
+}
+
+.nav-head-text {
+    font-family: 'IBM Plex Sans Hebrew', sans-serif;
+}
+
+.nav-for-text {
+    font-family: 'Qwitcher Grypen', cursive;
+    padding-bottom: 2rem;
+}
+
+.beige {
+    background-color: #F8F6E7FF;
+}
+
+.green {
+    color: #99A98F !important;
+}
+
+.bg-green {
+    color: #99A98F !important;
+}
+
+.light-brown {
+    background-color: #EEE3CB;
+}
+
+.main {
+    min-height: 100vh;
+    height: auto;
+    width: auto;
+    padding-top: 120px;
+}
+
+.social {
+    height: 5rem;
+}
+
+.route-display {
+    width: 100%;
+    height: auto;
+}
+
+.display-el {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1/1;
+}
+
+.shop-el {
+    min-height: 400px;
+}
+
