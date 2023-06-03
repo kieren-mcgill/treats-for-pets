@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shop_texts",
+  "info": {
+    "singularName": "shop-text",
+    "pluralName": "shop-texts",
+    "displayName": "shop text"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "shopTextContent": {
+      "type": "richtext"
+    }
+  }
+}

@@ -1,23 +1,26 @@
 import { Carousel, Container } from "react-bootstrap";
 
-const imagesURLs = [{ text: "This is slide 1", image: "antler_chews.jpeg"}, { text: "This is slide 2", image: "mince_food.jpeg"}];
-const CarouselEl = () => {
+
+const CarouselEl = ({ images }) => {
+  const envURL = process.env.REACT_APP_STRAPI_BASE_URL;
+  const baseURL = envURL.slice(0, envURL.length - 1);
   return (
-    <Container className="custom-carousel">
+    <Container className="custom-carousel p-0">
       <Carousel fade controls={false}
                 indicators={false}
                 autoPlay={true}
-                interval={2000}>
-                className=
-        {imagesURLs.map(({text, image}, i) =>
-          <Carousel.Item key={i}>
-            <img
-              src={`images/media/pet-shop-images/${image}`}
-              alt={text}
-              className='w-50 ratio-1x1'
-            />
-          </Carousel.Item>
-        )}
+                interval={4000}>
+        {images.length === 0 ? <Carousel.Item>
+            <p>Loading...</p>
+          </Carousel.Item> :
+          images.map(({ text, image }, i) =>
+            <Carousel.Item key={i} className="carousel-item">
+              <img
+                src={`${baseURL}${images[i].attributes.images.data[0].attributes.formats.medium.url}`}
+                alt={text}
+              />
+            </Carousel.Item>
+          )}
       </Carousel>
     </Container>
   )

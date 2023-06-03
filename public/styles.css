@@ -1,6 +1,6 @@
 
 .nav-style {
-    box-shadow: 0 1px 4px 0 rgba(0,0,0,.2);
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .2);
     background-color: rgb(248, 246, 231);
 }
 
@@ -47,8 +47,19 @@
 
 .display-el {
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     aspect-ratio: 1/1;
+}
+
+.custom-carousel {
+    height: 100%;
+    width: 100%
+}
+
+.carousel-item img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
 }
 
 .shop-el {

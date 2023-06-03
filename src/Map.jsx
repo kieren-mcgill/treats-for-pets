@@ -7,7 +7,7 @@ const Map = () => {
         width="450"
         height="250"
         referrerPolicy="no-referrer-when-downgrade"
-        src={`https://www.google.com/maps/embed/v1/place?key=${"AIzaSyBqRogKM4SVkqDPAga_D_gJTn0CrUYp2yw"}&q=Treats+for+Pets,South+Road,Sheffield`}
+        src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&q=Treats+for+Pets,South+Road,Sheffield`}
         allowFullScreen>
       </iframe>
     </>

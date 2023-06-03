@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "charity_texts",
+  "info": {
+    "singularName": "charity-text",
+    "pluralName": "charity-texts",
+    "displayName": "charity text"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "charityTextContent": {
+      "type": "richtext"
+    }
+  }
+}

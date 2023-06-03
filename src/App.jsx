@@ -4,37 +4,51 @@ import Main from "./Main";
 import FindUs from "./FindUs";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { initialTextContent } from "./initialContent"
+import { initialCharityCarousel, initialShopItems, initialTextContent } from "./initialContent"
+import AppContext from "./appContext";
 
 
-  const App = () => {
-    const [error, setError] = useState([]);
-    const [shopItems, setShopItems] = useState([]);
-    const [charityImages, setCharityImages] = useState([]);
-    const [shopImages, setShopImages] = useState([]);
-    const [textContent, setTextContent] = useState(initialTextContent)
+const App = () => {
 
-    const strapiDataToGet = [
-      {url: "/shop-items", response: setShopItems},
-      {url: "/charity-carousel-images", response: setShopItems},
-      {url: "/shop-carousel-images", response: setShopItems}
-    ]
+  const [shopItems, setShopItems] = useState(initialShopItems);
+  const [charityImages, setCharityImages] = useState(initialCharityCarousel);
+  const [shopImages, setShopImages] = useState([]);
+  const [shopText, setShopText] = useState([]);
+  const [charityText, setCharityText] = useState([]);
 
-    useEffect(() => {
-      strapiDataToGet.map((collection)=>
+  const strapiDataToGet = [
+    { url: "/shop-items", response: setShopItems },
+    { url: "/charity-carousel-images?populate=*", response: setCharityImages },
+    { url: "/shop-carousel-images?populate=*", response: setShopImages },
+    { url: "/shop-texts", response: setShopText },
+    { url: "/charity-texts", response: setCharityText },
+  ]
+
+  const getData = () => {
+    strapiDataToGet.map((collection) =>
       axios
         .get(`http://localhost:1337/api${collection.url}`)
-        .then(({ data }) => setShopItems(data.data))
-        .catch((error) => setError(error)))
-    }, []);
+        .then(({ data }) => collection.response(data.data))
+    )}
+
+  useEffect(() => {
+    getData()
+  }, []);
 
   return (
-    <div>
-      <NavbarEl />
-      <Main textContent={textContent}/>
-      <FindUs />
-    </div>
-)
+    <AppContext.Provider
+      value={{
+        shopItems,
+        charityImages,
+        shopImages,
+        shopText,
+        charityText
+      }}>
+      <NavbarEl/>
+      <Main/>
+      <FindUs/>
+    </AppContext.Provider>
+  )
 }
 
 export default App;
