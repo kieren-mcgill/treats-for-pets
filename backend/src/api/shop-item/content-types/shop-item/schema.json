@@ -4,7 +4,8 @@
   "info": {
     "singularName": "shop-item",
     "pluralName": "shop-items",
-    "displayName": "shop item"
+    "displayName": "shop item",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,14 +19,31 @@
       "type": "string"
     },
     "itemImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "animal": {
+      "type": "enumeration",
+      "enum": [
+        "dog",
+        "cat",
+        "bird",
+        "rodent",
+        "rabbit",
+        "lizard",
+        "fish",
+        "other"
+      ]
+    },
+    "priceInPounds": {
+      "type": "decimal"
     }
   }
 }

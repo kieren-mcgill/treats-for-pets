@@ -22,7 +22,7 @@
 }
 
 .bg-green {
-    color: #99A98F !important;
+    background-color: #99A98F !important;
 }
 
 .light-brown {
@@ -33,12 +33,12 @@
     min-height: 100vh;
     height: auto;
     width: auto;
-    padding-top: 120px;
+    padding-top: 85px;
 }
 
-.social {
-    height: 5rem;
-}
+/*.social {*/
+/*    height: auto;*/
+/*}*/
 
 .route-display {
     width: 100%;

@@ -2,8 +2,7 @@ import { Carousel, Container } from "react-bootstrap";
 
 
 const CarouselEl = ({ images }) => {
-  const envURL = process.env.REACT_APP_STRAPI_BASE_URL;
-  const baseURL = envURL.slice(0, envURL.length - 1);
+  const baseURL = process.env.REACT_APP_STRAPI_BASE_URL;
   return (
     <Container className="custom-carousel p-0">
       <Carousel fade controls={false}
@@ -11,7 +10,7 @@ const CarouselEl = ({ images }) => {
                 autoPlay={true}
                 interval={4000}>
         {images.length === 0 ? <Carousel.Item>
-            <p>Loading...</p>
+            <img src="/images/media/shop-front.jpeg" alt="A picture of the front of the shop"/>
           </Carousel.Item> :
           images.map(({ text, image }, i) =>
             <Carousel.Item key={i} className="carousel-item">

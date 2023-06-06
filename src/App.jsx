@@ -4,20 +4,18 @@ import Main from "./Main";
 import FindUs from "./FindUs";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { initialCharityCarousel, initialShopItems, initialTextContent } from "./initialContent"
 import AppContext from "./appContext";
-
 
 const App = () => {
 
-  const [shopItems, setShopItems] = useState(initialShopItems);
-  const [charityImages, setCharityImages] = useState(initialCharityCarousel);
+  const [shopItems, setShopItems] = useState([]);
+  const [charityImages, setCharityImages] = useState([]);
   const [shopImages, setShopImages] = useState([]);
   const [shopText, setShopText] = useState([]);
   const [charityText, setCharityText] = useState([]);
 
   const strapiDataToGet = [
-    { url: "/shop-items", response: setShopItems },
+    { url: "/shop-items?populate=*", response: setShopItems },
     { url: "/charity-carousel-images?populate=*", response: setCharityImages },
     { url: "/shop-carousel-images?populate=*", response: setShopImages },
     { url: "/shop-texts", response: setShopText },
@@ -44,9 +42,11 @@ const App = () => {
         shopText,
         charityText
       }}>
+      <div style={{fontFamily: "'Lato', sans-serif"}}>
       <NavbarEl/>
       <Main/>
       <FindUs/>
+      </div>
     </AppContext.Provider>
   )
 }

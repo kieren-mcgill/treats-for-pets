@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 
 const NavbarEl = () => {
 
+  const expand = "lg";
+
   const brandTitle = () => (
-    <h3 className="nav-head-text">
+    <h3 className="fw-bold">
       Treats<span className="nav-for-text"> for </span>Pets
     </h3>)
 
@@ -16,8 +18,6 @@ const NavbarEl = () => {
       height="75"
       className="d-inline-block me-3"
     />)
-
-  const expand = "lg";
 
   return (
     <>
@@ -42,10 +42,10 @@ const NavbarEl = () => {
             </Offcanvas.Header>
             <Offcanvas.Body className='beige'>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link as={Link} to="/">Treats for Pets</Nav.Link>
-                <Nav.Link as={Link} to="/charity">Pets in Need</Nav.Link>
-                <Nav.Link as={Link} to="/our-shop">Our products</Nav.Link>
-                <Nav.Link href="#findUs">Find us</Nav.Link>
+                <Nav.Link as={Link} to="/">TREATS FOR PETS</Nav.Link>
+                <Nav.Link as={Link} to="/charity">PETS IN NEED</Nav.Link>
+                <Nav.Link as={Link} to="/our-shop">OUR PRODUCTS</Nav.Link>
+                <Nav.Link href="#findUs">FIND US</Nav.Link>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
