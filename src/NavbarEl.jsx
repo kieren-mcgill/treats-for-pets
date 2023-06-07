@@ -7,7 +7,7 @@ const NavbarEl = () => {
 
   const brandTitle = () => (
     <h3 className="fw-bold">
-      Treats<span className="nav-for-text"> for </span>Pets
+      Treats<span style={{ fontFamily: "'Qwitcher Grypen', cursive" }}> for </span>Pets
     </h3>)
 
   const brandLogo = () => (
@@ -21,7 +21,10 @@ const NavbarEl = () => {
 
   return (
     <>
-      <Navbar key={expand} expand={expand} className="p-0 m-0 nav-style" fixed="top">
+      <Navbar key={expand}
+              expand={expand}
+              className="p-0 m-0 nav-style"
+              fixed="top">
         <Container fluid>
           <Navbar.Brand href="#">
             <div className="d-flex align-items-center">

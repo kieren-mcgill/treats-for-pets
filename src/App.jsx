@@ -5,6 +5,7 @@ import FindUs from "./FindUs";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import AppContext from "./appContext";
+import { baseUrl } from "./defaultContent";
 
 const App = () => {
 
@@ -23,10 +24,10 @@ const App = () => {
   ]
 
   const getData = () => {
-    strapiDataToGet.map((collection) =>
+    strapiDataToGet.map((dataItem) =>
       axios
-        .get(`http://localhost:1337/api${collection.url}`)
-        .then(({ data }) => collection.response(data.data))
+        .get(`${baseUrl}/api${dataItem.url}`)
+        .then(({ data }) => dataItem.response(data.data))
     )}
 
   useEffect(() => {

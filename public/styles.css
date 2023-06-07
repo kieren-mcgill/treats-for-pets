@@ -4,29 +4,8 @@
     background-color: rgb(248, 246, 231);
 }
 
-.nav-head-text {
-    font-family: 'IBM Plex Sans Hebrew', sans-serif;
-}
-
-.nav-for-text {
-    font-family: 'Qwitcher Grypen', cursive;
-    padding-bottom: 2rem;
-}
-
-.beige {
-    background-color: #F8F6E7FF;
-}
-
 .green {
     color: #99A98F !important;
-}
-
-.bg-green {
-    background-color: #99A98F !important;
-}
-
-.light-brown {
-    background-color: #EEE3CB;
 }
 
 .main {
@@ -35,10 +14,6 @@
     width: auto;
     padding-top: 85px;
 }
-
-/*.social {*/
-/*    height: auto;*/
-/*}*/
 
 .route-display {
     width: 100%;
