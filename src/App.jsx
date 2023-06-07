@@ -34,6 +34,7 @@ const App = () => {
     getData()
   }, []);
 
+
   return (
     <AppContext.Provider
       value={{

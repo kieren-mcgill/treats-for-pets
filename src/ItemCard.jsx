@@ -9,14 +9,14 @@ const ItemCard = ({ title, description, itemImage, price, animal, }) => {
                   alt={title}/>
         <Card.Body>
           <Card.Title className="text-center font-weight-bold">{title}</Card.Title>
-          <Card.Text>
+          <Card.Text className="text-center">
             {description}
           </Card.Text>
         </Card.Body>
         <ListGroup className="list-group-flush">
           <ListGroup.Item
-            className="text-center bg-green"
-            style={{ borderRadius: "0" }}
+            className="text-center"
+            style={{ borderRadius: "0", backgroundColor: '#99A98F' }}
           >{`Price : £${price}`}
           </ListGroup.Item>
         </ListGroup>
