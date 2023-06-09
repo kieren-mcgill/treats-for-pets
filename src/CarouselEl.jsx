@@ -1,5 +1,5 @@
 import { Carousel, Container } from "react-bootstrap";
-import { baseUrl } from "./defaultContent";
+import { baseUrl, defaultCarouselContent } from "./defaultContent";
 
 
 const CarouselEl = ({ images }) => {
@@ -9,9 +9,13 @@ const CarouselEl = ({ images }) => {
                 indicators={false}
                 autoPlay={true}
                 interval={4000}>
-        {images.length === 0 ? <Carousel.Item>
-            <img src="/images/media/shop-front.jpeg" alt="A picture of the front of the shop"/>
-          </Carousel.Item> :
+        {images.length === 0 ? defaultCarouselContent.map((url, i) =>
+            <Carousel.Item key={i} className="carousel-item">
+              <img
+                src={`${url}`}
+                alt={"A picture from Treats for Pets"}
+              />
+            </Carousel.Item>) :
           images.map(({ text, image }, i) =>
             <Carousel.Item key={i} className="carousel-item">
               <img

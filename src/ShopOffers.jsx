@@ -9,7 +9,7 @@ const ShopOffers = () => {
     <>
       <div className="w-100 pt-5 pb-5 bg-white d-flex flex-wrap justify-content-around"
       style={{ minHeight: '400px' }}>
-        {shopItems.length === 0 ? <p>Shop items coming soon...</p> :
+        {shopItems.length === 0 ? <p>There are no products to see right now</p> :
           shopItems.map((shopItem, i) => (
             <ItemCard
               key={i}
